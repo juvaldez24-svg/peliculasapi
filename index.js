@@ -41,7 +41,7 @@ try {
 
 // --- CONTROLES DE ACCESO CON JWT ---
 // Aplicamos el candado del Token de forma global a partir de aquí
-app.use('/peliculas', validarTokenJWT);
+//app.use('/peliculas', validarTokenJWT);
 
 // --- CRUD BÁSICO DE PELÍCULAS ---
 app.get('/peliculas', async (req, res) => {
