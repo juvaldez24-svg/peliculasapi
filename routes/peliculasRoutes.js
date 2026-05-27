@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const peliculasService = require('../services/peliculasService');
-const { validarTokenJWT, validarApiKey } = require('../middlewares/auth');
+const { validarTokenJWT, validarApiKey } = require('./middlewares/auth');
 
 router.use(validarApiKey);
 router.use(validarTokenJWT);
