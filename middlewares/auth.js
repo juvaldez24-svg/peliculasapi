@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const LLAVE_API_KEY = 'avengers_secret_key';
 const LLAVE_JWT = 'super_secret_avengers_jwt';
 
-/*const validarApiKey = (req, res, next) => {
+const validarApiKey = (req, res, next) => {
   const apiKey = req.headers['x-api-key'];
   
   if (!apiKey || apiKey !== LLAVE_API_KEY) {
@@ -11,7 +11,7 @@ const LLAVE_JWT = 'super_secret_avengers_jwt';
   }
   next();
 };
-*/
+
 const validarTokenJWT = (req, res, next) => {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1]; 
