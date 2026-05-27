@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const router = express.Router();
 const peliculasService = require('../services/peliculasService');
 const { validarTokenJWT, validarApiKey } = require('../middlewares/auth');
@@ -39,3 +39,17 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
+*/
+
+const express = require('express');
+const router = express.Router();
+const peliculasController = require('../controllers/peliculasController'); 
+
+const { verificarToken } = require('../middlewares/authMiddleware'); 
+
+router.get('/', verificarToken, peliculasController.obtenerPeliculas);
+
+router.post('/', verificarToken, peliculasController.crearPelicula);
+
+module.exports = router;
+
