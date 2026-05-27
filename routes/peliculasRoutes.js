@@ -3,7 +3,7 @@ const router = express.Router();
 const peliculasService = require('../services/peliculasService');
 const { validarTokenJWT, validarApiKey } = require('../middlewares/auth');
 
-router.use(validarApiKey);
+//router.use(validarApiKey);
 router.use(validarTokenJWT);
 
 router.get('/', async (req, res) => {
