@@ -1,4 +1,4 @@
-/* const express = require('express');
+const express = require('express');
 const router = express.Router();
 const peliculasService = require('../services/peliculasService');
 const { validarTokenJWT, validarApiKey } = require('../middlewares/auth');
@@ -37,19 +37,6 @@ router.delete('/:id', async (req, res) => {
   if (!eliminado) return res.status(404).json({ error: 'Película no encontrada' });
   res.json({ message: 'Película eliminada correctamente.' });
 });
-
-module.exports = router;
-*/
-
-const express = require('express');
-const router = express.Router();
-const peliculasController = require('../controllers/peliculasController'); 
-
-const { verificarToken } = require('../middlewares/authMiddleware'); 
-
-router.get('/', verificarToken, peliculasController.obtenerPeliculas);
-
-router.post('/', verificarToken, peliculasController.crearPelicula);
 
 module.exports = router;
 
