@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
 
-// Claves fijas directamente en el código para no usar .env
 const LLAVE_API_KEY = 'avengers_secret_key';
 const LLAVE_JWT = 'super_secret_avengers_jwt';
 
@@ -15,7 +14,7 @@ const validarApiKey = (req, res, next) => {
 
 const validarTokenJWT = (req, res, next) => {
   const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1]; // Toma el token después de "Bearer "
+  const token = authHeader && authHeader.split(' ')[1]; 
 
   if (!token) {
     return res.status(401).json({ error: 'Acceso denegado: Token no provisto.' });

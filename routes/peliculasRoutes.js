@@ -3,7 +3,6 @@ const router = express.Router();
 const peliculasService = require('../services/peliculasService');
 const { validarTokenJWT, validarApiKey } = require('../middlewares/auth');
 
-// Protegemos todas las rutas de este archivo con los middlewares requeridos
 router.use(validarApiKey);
 router.use(validarTokenJWT);
 

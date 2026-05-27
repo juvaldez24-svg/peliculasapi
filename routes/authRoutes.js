@@ -7,7 +7,6 @@ const LLAVE_JWT = 'super_secret_avengers_jwt';
 router.post('/login', (req, res) => {
   const { username, password } = req.body;
 
-  // Credenciales fijas para pasar la prueba del proyecto
   if (username === 'shield' && password === 'avengers2026') {
     const token = jwt.sign(
       { user: username, role: 'ADMIN' },
