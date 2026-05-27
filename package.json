@@ -1,15 +1,22 @@
 {
   "name": "tareafinal",
   "version": "1.0.0",
-  "description": "",
+  "description": "API de Películas de los Avengers - Misión Final",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "express",
+    "sequelize",
+    "postgresql",
+    "jwt",
+    "avengers"
+  ],
+  "author": "Agente de SHIELD",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
@@ -18,5 +25,8 @@
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.8",
     "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }

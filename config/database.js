@@ -1,29 +1,4 @@
-/*const { Sequelize } = require('sequelize');
-
-const urlPostgres = process.env.DATABASE_URL;
-
-const sequelize = urlPostgres
-  ? new Sequelize(urlPostgres, {
-      dialect: 'postgres',
-      protocol: 'postgres',
-      dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false
-        }
-      },
-      logging: false
-    })
-  : new Sequelize({
-      dialect: 'sqlite',
-      storage: './database.sqlite', 
-      logging: false
-    });
-
-module.exports = sequelize;
-*/
-
-import { Sequelize } from 'sequelize';
+/*import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres',
@@ -35,6 +10,23 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
     }
   },
   logging: false // Cambia a console.log si quieres ver las consultas SQL en la terminal
+});
+
+export default sequelize;
+*/
+
+import { Sequelize } from 'sequelize';
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres',
+  protocol: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false 
+    }
+  },
+  logging: false 
 });
 
 export default sequelize;
