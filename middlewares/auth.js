@@ -29,4 +29,5 @@ const validarTokenJWT = (req, res, next) => {
   }
 };
 
-module.exports = { validarApiKey, validarTokenJWT };
+export { validarTokenJWT };
+//module.exports = { validarApiKey, validarTokenJWT };
